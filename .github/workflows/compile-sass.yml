@@ -31,7 +31,7 @@ jobs:
             fetch-depth: 1
 
       - name: Move compiled CSS to path within gh-pages branch
-        run: mv /tmp/spongerobert.com/css /
+        run: mv /tmp/spongerobert.com/css .
 
       - name: Add and Commit changes to gh-pages branch
         run: |
