@@ -1,0 +1,491 @@
+// From https://codepen.io/ajmeese7/pen/PoRyppM
+
+/*COLORS*/
+$red: #D9241C;
+$coconut: #8F5343;
+$blue: #0093DC;
+$light-yellow: #FFF400;
+$dark-yellow: #D1C900;
+
+body {
+  background: $light-yellow;
+}
+
+.box {
+  position: relative;
+  height: 600px;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 5px;
+  background:
+   // The end corners of the eyebrows
+   radial-gradient(farthest-side at top left, transparent 98%, $light-yellow 100%) 100% 19%/29px 16% no-repeat,
+   // The underside of the eyebrows
+   radial-gradient(116% 70%  at bottom right, $light-yellow 99%, transparent 100%), 
+   // The actual eyebrows
+   radial-gradient(110% 100% at bottom right, #000 99%, transparent 100%);
+  border-radius: 50%;
+}
+
+.forehead-crease {
+  width: 55px;
+  height: 75px;
+  border: solid 4px #000;
+  border-color: #000 transparent transparent transparent;
+  border-radius: 55%/25px 4.5px 0 0;
+  transform: rotate(-47deg);
+}
+
+.eye-left {
+  position: absolute;
+  height: 25%;
+  width: 30%;
+  top: 21%;
+  left: 20%;
+  background: white;
+  border-radius: 50%;
+  border: 5px solid black;
+  z-index: 1;
+}
+
+.eyebrow-left {
+  position: absolute;
+  height: 10%;
+  width: 30%;
+  top: 16%;
+  left: 19%;
+  transform: scaleX(-1) rotate(-7deg);
+}
+
+.forehead-crease-left {
+  position: absolute;
+  height: 10%;
+  top: 18.5%;
+  left: 37.5%;
+  transform: scaleX(-1);
+}
+
+.bloodshot-line {
+  border-top: 2px solid red;
+}
+
+.eye-right {
+  position: absolute;
+  height: 25%;
+  width: 30%;
+  top: 21%;
+  right: 19%;
+  background: white;
+  border-radius: 50%;
+  border: 5px solid black;
+  z-index: 1;
+}
+
+.eyebrow-right {
+  position: absolute;
+  height: 10%;
+  width: 30%;
+  top: 16%;
+  right: 18%;
+  transform: rotate(-7deg);
+}
+
+.eyebrow-right-cut {
+  position: absolute;
+  height: 10%;
+  width: 3px;
+  top: 16%;
+  right: 29%;
+  transform: rotate(-14deg);
+  background-color: #FFF400;
+}
+
+.forehead-crease-right {
+  position: absolute;
+  height: 10%;
+  top: 18.5%;
+  right: 36.5%;
+}
+
+.pupil-left {
+  position: absolute;
+  height: 30%;
+  width: 30%;
+  top: 40%;
+  left: 47%;
+  background: $blue;
+  border-radius: 50%;
+  border: 2px solid black
+}
+
+.iris-left {
+  position: absolute; 
+  height: 50%;
+  width: 50%;
+  top: 25%;
+  left: 25%;
+  background: black;
+  border-radius: 50%;
+}
+
+.pupil-right {
+  position: absolute;
+  height: 30%;
+  width: 30%;
+  top: 40%;
+  right: 47%;
+  background: $blue;
+  border-radius: 50%;
+  border: 2px solid black
+}
+
+.iris-right {
+  position: absolute; 
+  height: 50%;
+  width: 50%;
+  top: 25%;
+  right: 25%;
+  background: black;
+  border-radius: 50%;
+}
+
+.bloodshot-right-1-1 {
+  position: absolute;
+  width: 30%;
+  top: 32%;
+  right: 35%;
+  transform: rotate(-35deg);
+}
+
+.bloodshot-right-1-2 {
+  position: absolute;
+  width: 25%;
+  top: 27%;
+  right: 13.3%;
+  transform: rotate(19deg);
+}
+
+.bloodshot-right-1-3 {
+  position: absolute;
+  width: 11%;
+  top: 28.1%;
+  right: 5.3%;
+  transform: rotate(-36deg);
+}
+
+.bloodshot-right-2-1 {
+  position: absolute;
+  width: 23%;
+  top: 78%;
+  right: 36%;
+  transform: rotate(48deg);
+}
+
+.bloodshot-right-2-2 {
+  position: absolute;
+  width: 10.75%;
+  top: 93.1%;
+  right: 37.3%;
+  transform: rotate(-58deg);
+}
+
+.bloodshot-right-3-1 {
+  position: absolute;
+  width: 10%;
+  top: 50%;
+  right: 74%;
+  transform: rotate(35deg);
+}
+
+.bloodshot-right-3-2 {
+  position: absolute;
+  width: 14%;
+  top: 38%;
+  right: 76.3%;
+  transform: rotate(84deg);
+}
+
+.bloodshot-right-3-3 {
+  position: absolute;
+  width: 10%;
+  top: 26.1%;
+  right: 83.3%;
+  transform: rotate(26deg);
+}
+
+.nose {
+  position: absolute;
+  height: 18%;
+  width: 6%;
+  top: 30%;
+  left: 47%;
+  background: $light-yellow;
+  border: 1px solid transparent;
+  border-top: 5px solid black;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  border-radius: 45%;
+  z-index: 5;
+}
+
+.cheek-left {
+  position: absolute;
+  height: 8%;
+  width: 13%;
+  top: 42%;
+  left: 14%;
+  background: $light-yellow;
+  border: 2px solid transparent; 
+  border-top: 5px solid $red;
+  border-left: 4px solid $red;
+  border-right: 4px solid $red;
+  border-radius: 50%;
+  transform: rotate(-12deg);
+  z-index: 4;
+}
+
+.cheek-right {
+  position: absolute;
+  height: 8%;
+  width: 13%;
+  top: 42%;
+  right: 14%;
+  background: $light-yellow;
+  border: 2px solid transparent; 
+  border-top: 5px solid $red;
+  border-left: 4px solid $red;
+  border-right: 4px solid $red;
+  border-radius: 50%;
+  transform: rotate(12deg);
+  z-index: 4;
+}
+
+.anchor-tattoo {
+  position: absolute;
+  right: 91%;
+  transform: rotate(-16deg);
+  width: 100px;
+  top: 46%;
+}
+
+.dimples-left-1 {
+  position: relative;
+  height: 12%;
+  width: 7%;
+  background: $red;
+  border-radius: 50%;
+  top: 30%;
+  left: 25%;
+}
+
+.dimples-left-2 {
+  position: absolute;
+  height: 12%;
+  width: 7%;
+  background: $red;
+  border-radius: 50%;
+  top: 30%;
+  left: 55%;
+}
+
+.dimples-left-3 {
+  position: absolute;
+  height: 12%;
+  width: 7%;
+  background: $red;
+  border-radius: 50%;
+  top: 60%;
+  left: 40%;
+}
+
+.dimples-right-1 {
+  position: relative;
+  height: 12%;
+  width: 7%;
+  background: $red;
+  border-radius: 50%;
+  top: 30%;
+  right: -30%;
+}
+
+.dimples-right-2 {
+  position: absolute;
+  height: 12%;
+  width: 7%;
+  background: $red;
+  border-radius: 50%;
+  top: 30%;
+  right: 35%;
+}
+
+.dimples-right-3 {
+  position: absolute;
+  height: 12%;
+  width: 7%;
+  background: $red;
+  border-radius: 50%;
+  top: 60%;
+  right: 50%;
+}
+
+.mouth {
+  position: absolute;
+  height: 50%;
+  width: 70%;
+  top: 60%;
+  left: 14%;
+  transform: rotate(180deg);
+  border: 2px solid transparent;
+  border-bottom: 5px solid black;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.mouth-crease-left {
+  position: absolute;
+  height: 10%;
+  width: 10%;
+  border: 1px solid transparent;
+  border-top: 5px solid black;
+  border-radius: 50%;
+  top: 64.5%;
+  transform: rotate(-135deg);
+  left: 17%;
+}
+
+.mouth-crease-right {
+  position: absolute;
+  height: 10%;
+  width: 10%;
+  border: 1px solid transparent;
+  border-top: 5px solid black;
+  border-radius: 50%;
+  top: 64.5%;
+  transform: rotate(135deg);
+  right: 18%;
+}
+
+.tooth-left {
+  position: absolute;
+  height: 11%;
+  width: 6%;
+  background: gold;
+  border: 3px solid #DBB40C;
+  top: 86.8%;
+  left: 51%;
+  z-index: 1;
+  transform: rotate(-5deg);
+  border-radius: 3px 3px 0 0;
+}
+
+.tooth-right {
+  position: absolute;
+  height: 11%;
+  width: 6%;
+  background: white;
+  border: 5px solid black;
+  top: 86.6%;
+  left: 41.5%;
+  z-index: 1;
+  transform: rotate(4.5deg);
+}
+
+.chin:before {
+  position: absolute;
+  content: '';
+  height: 15%;
+  width: 15%;
+  border: 2px solid transparent;
+  border-bottom: 8px solid $red;
+  border-radius: 50%;
+  top: 62%;
+  left: 38%;
+  transform: rotate(10deg);
+}
+
+.chin:after {
+  position: absolute;
+  content: '';
+  height: 15%;
+  width: 15%;
+  border: 2px solid transparent;
+  border-bottom: 8px solid $red;
+  border-radius: 50%;
+  top: 62%;
+  left: 50%;
+  transform: rotate(-10deg);
+}
+
+.hole-1 {
+  position: absolute;
+  height: 8%;
+  width: 8%;
+  background: $dark-yellow;
+  border-radius: 50%;
+  top: 12%;
+}
+
+.hole-2 {
+  position: absolute;
+  height: 10%;
+  width: 10%;
+  background: $dark-yellow;
+  border-radius: 50%;
+  top: 5%;
+  right: 5%;
+}
+
+.hole-3 {
+  position: absolute;
+  height: 7%;
+  width: 7%;
+  background: $dark-yellow;
+  border-radius: 50%;
+  top: 38%;
+  right: 3%;
+}
+
+.hole-4 {
+  position: absolute;
+  height: 8%;
+  width: 8%;
+  background: $dark-yellow;
+  border-radius: 50%;
+  top: 58%;
+  right: 10%;
+}
+
+.hole-5 {
+  position: absolute;
+  height: 6%;
+  width: 6%;
+  background: $dark-yellow;
+  border-radius: 50%;
+  top: 58%;
+  left: 10%;
+}
+
+.hole-6 {
+  position: absolute;
+  height: 8%;
+  width: 8%;
+  background: $dark-yellow;
+  border-radius: 50%;
+  top: 78%;
+  left: 24%;
+}
+
+.hole-7 {
+  position: absolute;
+  height: 5%;
+  width: 5%;
+  background: $dark-yellow;
+  border-radius: 50%;
+  top: 80%;
+  right: 24%;
+}
