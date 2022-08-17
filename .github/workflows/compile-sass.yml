@@ -11,12 +11,15 @@ jobs:
       - name: Checkout source Git branch
         uses: actions/checkout@v2
         with:
-            ref: master
-            fetch-depth: 10
-            submodules: true
+          ref: master
+          fetch-depth: 10
+          submodules: true
 
       - name: Make destination directory for compiled CSS
         run: mkdir -vp /tmp/spongerobert.com/css
+
+      - name: Copy over all the non-SCSS files
+        run: find . -not -iname "*.scss" -type f -exec mv -t /tmp/spongerobert.com {} +
 
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.4.9
@@ -27,18 +30,18 @@ jobs:
       - name: Checkout destination Git branch
         uses: actions/checkout@v2
         with:
-            ref: gh-pages
-            fetch-depth: 1
+          ref: gh-pages
+          fetch-depth: 1
 
-      - name: Move compiled CSS to path within gh-pages branch
-        run: mv /tmp/spongerobert.com/css .
+      - name: Move files to path within gh-pages branch
+        run: mv /tmp/spongerobert.com .
 
       - name: Add and Commit changes to gh-pages branch
         run: |
           git config --local user.email 'action@github.com'
           git config --local user.name 'GitHub Action'
-          git add css/*
-          git commit -m 'Updates compiled CSS files'
+          git add *
+          git commit -m 'Deployed most recent changes'
 
       - name: Push changes
         uses: ad-m/github-push-action@master
