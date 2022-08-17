@@ -19,7 +19,7 @@ jobs:
         run: mkdir -vp /tmp/spongerobert.com/css
 
       - name: Copy over all the non-SCSS files
-        run: find . -not -iname "*.scss" -type f -exec mv -t /tmp/spongerobert.com {} +
+        run: find . -not -path "*/\.git/*" -not -iname "*.scss" -type f -exec mv -t /tmp/spongerobert.com {} +
 
       - name: Compile CSS from SCSS files
         uses: gha-utilities/sass-build@v0.4.9
