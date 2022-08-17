@@ -35,7 +35,7 @@ jobs:
 
       - name: Move files to path within gh-pages branch
         run: |
-          find . -not -path "*/\.git/*" -exec rm -rf {} +
+          find . -not -path "*/.*" -exec rm -rf {} +
           mv /tmp/spongerobert.com/* .
 
       - name: Add and Commit changes to gh-pages branch
