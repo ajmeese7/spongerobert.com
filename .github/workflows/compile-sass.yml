@@ -34,7 +34,9 @@ jobs:
           fetch-depth: 1
 
       - name: Move files to path within gh-pages branch
-        run: mv /tmp/spongerobert.com/* .
+        run: |
+          find . -not -path "*/\.git/*" -exec rm -rf {} +
+          mv /tmp/spongerobert.com/* .
 
       - name: Add and Commit changes to gh-pages branch
         run: |
